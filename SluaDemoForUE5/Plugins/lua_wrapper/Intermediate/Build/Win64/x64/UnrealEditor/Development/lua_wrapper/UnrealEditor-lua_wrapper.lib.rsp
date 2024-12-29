@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-lua_wrapper.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
+"F:\Learning\SluaDemoForUE5\SluaDemoForUE5\Plugins\lua_wrapper\Intermediate\Build\Win64\x64\UnrealEditor\Development\lua_wrapper\Module.lua_wrapper.cpp.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"F:\Learning\SluaDemoForUE5\SluaDemoForUE5\Plugins\lua_wrapper\Intermediate\Build\Win64\x64\UnrealEditor\Development\lua_wrapper\UnrealEditor-lua_wrapper.lib"

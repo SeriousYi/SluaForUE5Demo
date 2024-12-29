@@ -9,5 +9,8 @@ public class SluaDemoForUE5 : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
+		PrivateDependencyModuleNames.AddRange(new string[] { "slua_unreal", "Slate", "SlateCore", "UMG" });
+		PrivateIncludePathModuleNames.AddRange(new string[] { "slua_unreal" });
+		PublicIncludePathModuleNames.AddRange(new string[] { "slua_unreal" });
 	}
 }

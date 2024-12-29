@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-slua_profile.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
+"F:\Learning\SluaDemoForUE5\SluaDemoForUE5\Plugins\slua_unreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\slua_profile\Module.slua_profile.cpp.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"F:\Learning\SluaDemoForUE5\SluaDemoForUE5\Plugins\slua_unreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\slua_profile\UnrealEditor-slua_profile.lib"

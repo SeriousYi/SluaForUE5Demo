@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-slua_unreal.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
+"F:\Learning\SluaDemoForUE5\SluaDemoForUE5\Plugins\slua_unreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\slua_unreal\Module.slua_unreal.1.cpp.obj"
+"F:\Learning\SluaDemoForUE5\SluaDemoForUE5\Plugins\slua_unreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\slua_unreal\Module.slua_unreal.2.cpp.obj"
+"F:\Learning\SluaDemoForUE5\SluaDemoForUE5\Plugins\slua_unreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\slua_unreal\Module.slua_unreal.3.cpp.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"F:\Learning\SluaDemoForUE5\SluaDemoForUE5\Plugins\slua_unreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\slua_unreal\UnrealEditor-slua_unreal.lib"
