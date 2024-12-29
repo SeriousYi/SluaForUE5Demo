@@ -28,24 +28,36 @@ static uint8* ReadFile(IPlatformFile& PlatformFile, FString path, uint32& len) {
 
 UMyGameInstance::UMyGameInstance() : state(nullptr)
 {
+	// 排除 CDO 模版
 	if (!HasAnyFlags(RF_ClassDefaultObject | RF_ArchetypeObject))
 	{
+		// 创建Lua对象（解释器+虚拟机）
 		CreateLuaState();
 	}
 }
 
 void UMyGameInstance::CreateLuaState()
 {
+	// 绑定初始化之后的回调
     NS_SLUA::LuaState::onInitEvent.AddUObject(this, &UMyGameInstance::LuaStateInitCallback);
 
+	// 清理残留lua实例
 	CloseLuaState();
-	state = new NS_SLUA::LuaState("SLuaMainState", this);
-	state->setLoadFileDelegate([](const char* fn, FString& filepath)->TArray<uint8> {
 
+	// 实例化 luastate
+	state = new NS_SLUA::LuaState("SLuaMainState", this);
+
+
+	// Editor模式下是OK。但，默认打包发布，是不会带上`Content/Lua`路径（只会cook .uasset进pak包），游戏会读不到Lua脚本。
+	state->setLoadFileDelegate([](const char* fn, FString& filepath)->TArray<uint8> {
+		// 平台文件
 		IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
+		// Content
 		FString path = FPaths::ProjectContentDir();
 		FString filename = UTF8_TO_TCHAR(fn);
+		// Content/Lua
 		path /= "Lua";
+		// Content.Lua
 		path /= filename.Replace(TEXT("."), TEXT("/"));
 
 		TArray<uint8> Content;
@@ -62,9 +74,12 @@ void UMyGameInstance::CreateLuaState()
 
 		return MoveTemp(Content);
 	});
+
+	// 初始化 init 环境
 	state->init();
 }
 
+// 关闭lua实例
 void UMyGameInstance::CloseLuaState()
 {
     if (state)
@@ -88,6 +103,7 @@ void UMyGameInstance::Shutdown()
 	Super::Shutdown();
 }
 
+// 在lua侧设置 全局函数 PrintLog
 static int32 PrintLog(NS_SLUA::lua_State *L)
 {
 	FString str;
@@ -98,6 +114,7 @@ static int32 PrintLog(NS_SLUA::lua_State *L)
 	return 0;
 }
 
+// lua 实例创建成功的回调
 void UMyGameInstance::LuaStateInitCallback(NS_SLUA::lua_State* L)
 {
 	lua_pushcfunction(L, PrintLog);
