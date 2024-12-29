@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{AD61501A-4B70-E700-C57E-5CB4CEC24901}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "SluaDemoForUE5",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		}
+	]
+}
