@@ -1,0 +1,8 @@
+{
+	"BuildId": "4cb5a626-f27b-490a-b388-02bdaff2060d",
+	"Modules": 
+	{
+		"slua_profile": "UnrealEditor-slua_profile.dll",
+		"slua_unreal": "UnrealEditor-slua_unreal.dll"
+	}
+}

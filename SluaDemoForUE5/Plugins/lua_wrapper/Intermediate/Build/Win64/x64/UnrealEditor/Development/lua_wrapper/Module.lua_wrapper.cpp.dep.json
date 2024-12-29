@@ -1,0 +1,36 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\learning\\sluademoforue5\\sluademoforue5\\plugins\\lua_wrapper\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\lua_wrapper\\module.lua_wrapper.cpp",
+        "ProvidedModule": "",
+        "PCH": "f:\\unrealengine5\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.cpp20.h.pch",
+        "Includes": [
+            "f:\\learning\\sluademoforue5\\sluademoforue5\\plugins\\lua_wrapper\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\lua_wrapper\\definitions.lua_wrapper.h",
+            "f:\\learning\\sluademoforue5\\sluademoforue5\\plugins\\lua_wrapper\\source\\lua_wrapper\\private\\lua_wrapper.cpp",
+            "f:\\learning\\sluademoforue5\\sluademoforue5\\plugins\\lua_wrapper\\source\\lua_wrapper\\public\\lua_wrapper.h",
+            "f:\\learning\\sluademoforue5\\sluademoforue5\\plugins\\lua_wrapper\\source\\lua_wrapper\\public\\lua_wrapperstyle.h",
+            "f:\\learning\\sluademoforue5\\sluademoforue5\\plugins\\lua_wrapper\\source\\lua_wrapper\\public\\lua_wrappercommands.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\editor\\leveleditor\\public\\leveleditor.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\editor\\leveleditor\\public\\ileveleditor.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\engine\\public\\elements\\framework\\engineelementslibrary.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\engineelementslibrary.generated.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\editor\\leveleditor\\public\\viewporttypedefinition.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\editor\\leveleditor\\public\\leveleditoroutlinersettings.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\developer\\toolwidgets\\public\\filters\\genericfilter.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\developer\\toolwidgets\\public\\filters\\filterbase.h",
+            "f:\\learning\\sluademoforue5\\sluademoforue5\\plugins\\lua_wrapper\\source\\lua_wrapper\\private\\lua_wrappercommands.cpp",
+            "f:\\learning\\sluademoforue5\\sluademoforue5\\plugins\\lua_wrapper\\source\\lua_wrapper\\private\\lua_wrapperstyle.cpp",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestyleregistry.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\engine\\public\\slate\\slategameresources.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\projects\\public\\localizationdescriptor.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\projects\\public\\moduledescriptor.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
+            "f:\\unrealengine5\\unrealengine\\engine\\source\\runtime\\projects\\public\\versescope.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

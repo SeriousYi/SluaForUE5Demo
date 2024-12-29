@@ -1,0 +1,7 @@
+{
+	"BuildId": "4cb5a626-f27b-490a-b388-02bdaff2060d",
+	"Modules": 
+	{
+		"lua_wrapper": "UnrealEditor-lua_wrapper.dll"
+	}
+}
