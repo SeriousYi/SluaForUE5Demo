@@ -522,7 +522,7 @@ namespace NS_SLUA {
         }
     }
 
-
+    // 初始化 lua 解释器
     bool LuaState::init() {
 
         if(deadLoopCheck)
@@ -531,8 +531,11 @@ namespace NS_SLUA {
         if(!mainState) 
             mainState = this;
 
+        // 注册GC 回调 用于清除import的内容
         pgcHandler = FCoreUObjectDelegates::GetPostGarbageCollect().AddRaw(this, &LuaState::onEngineGC);
+        // 注册 World 清除的回到，以移除 slua 对 world 的引用
         wcHandler = FWorldDelegates::OnWorldCleanup.AddRaw(this, &LuaState::onWorldCleanup);
+        // 注册之后 UObject创建或者移除时 会触发 NotifyUObjectDeleted NotifyUObjectCreated
         GUObjectArray.AddUObjectDeleteListener(this);
         GUObjectArray.AddUObjectCreateListener(this);
 
@@ -712,6 +715,7 @@ namespace NS_SLUA {
     // engine will call this function on post gc
     void LuaState::onEngineGC()
     {
+         // 清除import的内容
         for (CacheImportedMap::TIterator it(cacheImportedMap); it; ++it)
             if (!it.Value().cacheObjectPtr.IsValid())
                 it.RemoveCurrent();
@@ -719,6 +723,7 @@ namespace NS_SLUA {
     
     void LuaState::onWorldCleanup(UWorld * World, bool bSessionEnded, bool bCleanupResources)
     {
+        // 将slua 对 world 的引用标记去除 
         unlinkUObject(World);
     }
 
@@ -793,9 +798,12 @@ namespace NS_SLUA {
     }
 #endif
 
+    // UObject 移除通知
     void LuaState::NotifyUObjectDeleted(const UObjectBase * Object, int32 Index)
     {
+        // 清除UObject 以及对应的 UProperty 的缓存 （应该是共lua侧加速）
         classMap.cachePropMap.Remove((UStruct*)Object);
+        
         LuaObject::removeCache(L, Object, cacheEnumRef);
         LuaObject::removeCache(L, Object, cacheClassPropRef);
         LuaObject::removeCache(L, Object, cacheClassFuncRef);
@@ -830,6 +838,7 @@ namespace NS_SLUA {
         }
     }
 
+    // 移除UObject 在 slua 侧的引用
     void LuaState::unlinkUObject(const UObject * Object,void* userdata/*=nullptr*/)
     {
         // find Object from objRefs, maybe nothing
